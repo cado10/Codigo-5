@@ -7,4 +7,3 @@ Integrantes:
 3. Fidel Fuerte -> vivo en Tunja,soy Ingeniero Electrónico,busco adquirir nuevos conocimientos. 
 4.
 5. Andrés Delgado (cado10) -> Soy Ingeniero Electrónico, Pastuso! con muchas ganas de aprender
-
