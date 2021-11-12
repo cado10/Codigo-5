@@ -1,6 +1,7 @@
-#### Código-5
+# Código-5
+-------------
 
-Integrantes:
+#### Integrantes:
 
 1. Jony Lopez Salazar
 2. Jose Guardo -> Encantado de comenzar este nuevo ciclo
