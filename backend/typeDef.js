@@ -20,10 +20,13 @@ const typeDefs = gql`
         getProject(nombre:String):Proyecto
     }
     input UserInput{
-        nombre: String
+        email: String
         identificacion:Int
+        nombre: String
+        apellido: String
         clave: String
-        perfil: String
+        tipoUsuario: String
+        estado: String
     }
     type Mutation{
         createUser(user:UserInput):String

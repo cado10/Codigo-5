@@ -1,8 +1,9 @@
 const { Schema, model } = require('mongoose')
 
 const usuario = new Schema({
-    nombre: {
+    email:{
         type: String,
+        unique: true,
         required: true
     },
     identificacion: {
@@ -10,17 +11,31 @@ const usuario = new Schema({
         unique: true,
         required: true
     },
-    perfil: {
+    nombre: {
         type: String,
         required: true
     },
-    estado: {
+    apellido:{
         type: String,
-        default: "Inactivo"
+        required: true
     },
     clave: {
         type: String,
         required: true
-    }
+    },
+    tipoUsuario:{
+        type: Schema.Types.ObjectId,
+        ref: 'tipoUsuario',
+        required: true
+    },
+    estado: {
+        type: Schema.Types.ObjectId,
+        ref: 'estado',
+        required: true
+    },
+    liderProyecto: [Number],
+    inscripciones: [Number],
+    avances: []
+    
 })
 module.exports = model('usuarios', usuario,"usuarios")
