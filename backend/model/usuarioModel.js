@@ -24,18 +24,16 @@ const usuario = new Schema({
         required: true
     },
     tipoUsuario:{
-        type: Schema.Types.ObjectId,
-        ref: 'tipoUsuario',
+        type: String,
         required: true
     },
     estado: {
-        type: Schema.Types.ObjectId,
-        ref: 'estado',
+        type: String,
         required: true
     },
     liderProyecto: [Number],
     inscripciones: [Number],
-    avances: []
+    avances: [{}]
     
 })
 module.exports = model('usuarios', usuario,"usuarios")

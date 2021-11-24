@@ -24,5 +24,5 @@ mongoose.connect(urlDB);
 // mongoose.connect(DB)
 const mongoDB = mongoose.connection;
 mongoDB.on('open', _ =>{
-    console.log("conectado a la bd")
+    console.log("Database is online")
 })
