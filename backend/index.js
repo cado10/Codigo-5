@@ -29,6 +29,6 @@ const iniciarServidor = async () => {
     api.use((request, response) => {
         response.send('Hello from express apollo server')
     })
-    api.listen('9092', () => console.log('Inicio server'))
+    api.listen('9092', () => console.log('Server running on port 9092'))
 }
 iniciarServidor()
