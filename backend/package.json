@@ -21,6 +21,7 @@
     "url": "https://github.com/cado10/Codigo-5/issues"
   },
   "homepage": "https://github.com/cado10/Codigo-5#readme",
+  "type": "module",
   "dependencies": {
     "aes256": "^1.1.0",
     "apollo-server": "^3.5.0",
@@ -29,7 +30,9 @@
     "express": "^4.17.1",
     "graphql": "^16.0.1",
     "mongoose": "^6.0.13",
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
