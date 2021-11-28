@@ -1,5 +1,6 @@
-const User = require('../model/usuarioModel')
-var aes256 = require('aes256');
+// import User from '../model/usuario/usuario.model';
+const User = require ('../model/usuario/usuario.model')
+import aes256 from 'aes256';
 const key = 'CLAVEDIFICIL';
 
 

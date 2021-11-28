@@ -1,34 +1,29 @@
+import express from 'express';
+import cors from 'cors';
+import { ApolloServer } from 'apollo-server-express';
+import dotenv from 'dotenv';
+import conectarBD from './database/connectionDB.js';
+import { tipos } from './graphql/types.js';
+import { resolvers } from './graphql/resolvers.js';
 
-require('./database/connectionDB')
-require('dotenv').config();
+dotenv.config();
 
-const typeDefs = require('./typeDef')
-const resolvers = require('./resolver')
+const server = new ApolloServer({
+  typeDefs: tipos,
+  resolvers: resolvers,
+});
 
-// const {dbConnection} = require('./database/connectionDB');
+const app = express();
 
-// const Port = process.env.Port;
+app.use(express.json());
 
+app.use(cors());
 
-const express = require('express')
-const { ApolloServer } = require('apollo-server-express')
+app.listen({ port: process.env.PORT || 4000 }, async () => {
+  await conectarBD();
+  await server.start();
 
+  server.applyMiddleware({ app });
 
-/** Base de datos */
-// dbConnection();
-
-const iniciarServidor = async () => {
-    const api = express();
-    const apollo = new ApolloServer(
-        {
-            typeDefs,
-            resolvers
-        });
-    await apollo.start()
-    apollo.applyMiddleware({ app: api })
-    api.use((request, response) => {
-        response.send('Hello from express apollo server')
-    })
-    api.listen('9092', () => console.log('Server running on port 9092'))
-}
-iniciarServidor()
+  console.log('servidor listo');
+});
